@@ -1,4 +1,4 @@
-# Inferno neovim
+# Infernovim
 
 README.md to be written.
 
