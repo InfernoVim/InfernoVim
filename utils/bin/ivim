@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+export INFERNOVIM_RUNTIME_DIR="${LUNARVIM_RUNTIME_DIR:-"$HOME/.local/share/infernovim"}"
+export INFERNOVIM_CONFIG_DIR="${LUNARVIM_CONFIG_DIR:-"$HOME/.config/ivim"}"
+export INFERNOVIM_CACHE_DIR="${LUNARVIM_CACHE_DIR:-"$HOME/.cache/ivim"}"
+
+exec nvim -u "$LUNARVIM_RUNTIME_DIR/lvim/init.lua" "$@"
+

@@ -79,39 +79,34 @@ function main() {
 
   print_logo
 
-  echo "Checking installed neovim version"
+  echo "Checking installed neovim version."
   check_neovim_ver
 
-  echo "Checking system dependencies"
+  echo "Checking system dependencies."
   check_dependencies
 
-  echo "Detecting platform for managing any additional external dependencies"
+  echo "Detecting platform for managing any additional external dependencies."
   detect_platform
 
   if [ "$ARGS_SKIP_PROMPTS" -eq 1 ]; then
-    echo "Currently no dependencies can be installed"
+    echo "Currently no dependencies can be installed."
   else
-    echo "Currently no dependencies can be installed"
+    echo "Currently no dependencies can be installed."
   fi
 
   backup_old_config
 
   if [ "$ARGS_OVERWRITE" -eq 0 ]; then
-    echo "Removing previous install"
+    echo "Removing previous install."
     remove_prev_install
   fi
 
-  echo "Creating InfernoVim file structure"
+  echo "Creating InfernoVim file structure."
   create_base_dirs
 
-  echo "Installing InfernoVim"
+  echo "Installing InfernoVim."
   clone_infernovim
   setup_infernovim
-
-  if [ "$ARGS_LINK" -eq 0 ]; then
-    echo "Creating sym-link between neovim and InfernoVim"
-    link_nvim
-  fi
 
   msg "$USER_WARNINGS"
   echo "Thank you for install InfernoViM!"
@@ -223,10 +218,10 @@ function backup_old_config() {
       cp -R "$src/"* "$src.old/."
       ;;
     *)
-      echo "OS $OS is not currently supported"
+      echo "OS $OS is not currently supported."
     ;;
   esac
-  echo "Backup operation complete"
+  echo "Backup operation complete."
 }
 
 function check_neovim_ver() {
@@ -239,7 +234,7 @@ function check_neovim_ver() {
 function clone_infernovim() {
   if !git clone --branch "$IV_BRANCH" \
     --depth 1 "https://github.com/${IV_REMOTE}" "$INFERNOVIM_BASE_DIR"; then
-    echo "Failed to clone repository. Installation failed"
+    echo "Failed to clone repository. Installation failed."
     exit 1
   fi
 }
