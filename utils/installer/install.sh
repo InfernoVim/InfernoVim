@@ -230,7 +230,7 @@ function check_neovim_ver() {
 
 # Clone infernovim to $HOME/.local/share/infernovim/ivim
 function clone_infernovim() {
-  if !git clone --branch "$IV_BRANCH" \
+  if ! git clone --branch "$IV_BRANCH" \
     --depth 1 "https://github.com/${IV_REMOTE}" "$INFERNOVIM_BASE_DIR"; then
     echo "Failed to clone repository. Installation failed."
     exit 1
