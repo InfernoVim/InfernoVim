@@ -11,7 +11,6 @@ declare -r XDG_CACHE_HOME="${XDG_CACHE_HOME:-"$HOME/.cache"}"
 declare -r XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"$HOME/.config"}"
 
 declare -r INFERNOVIM_RUNTIME_DIR="${INFERNOVIM_RUNTIME_DIR:-"$XDG_DATA_HOME/infernovim"}"
-declare -r INFERNOVIM_CONFIG_DIR="${INFERNOVIM_CONFIG_DIR:-"$XDG_CONFIG_HOME/ivim"}"
 declare -r INFERNOVIM_CACHE_DIR="${INFERNOVIM_CACHE_DIR:-"$XDG_CACHE_HOME/ivim"}"
 declare -r INFERNOVIM_BASE_DIR="${INFERNOVIM_BASE_DIR:-"$INFERNOVIM_RUNTIME_DIR/ivim"}"
 
@@ -22,11 +21,10 @@ declare ARGS_SKIP_PROMPTS=1
 # Warnings
 declare USER_WARNINGS=""
 
-declare -a ivim_dirs {
+declare -a ivim_dirs=(
   "$INFERNOVIM_RUNTIME_DIR"
   "$INFERNOVIM_CONFIG_DIR"
-  "$INFERNOVIM_CACHE_DIR"
-}
+)
 
 function usage() {
   echo "Usage: install.sh [<options>]"
