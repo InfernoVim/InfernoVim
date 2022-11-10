@@ -2,13 +2,12 @@
 set -eo pipefail
 
 # Set branch to master unless sepcified by the user
-declare -r IV_BRANCH="${IV_BRANCH:-"master"}"
-declare -r IV_REMOTE="${IV_REMOTE:-infernovim/infernovim.git}"
-declare -r INSTALL_PREFIX="${INSTALL_PREFIX-:-"$HOME/.local"}"
+declare -r IV_BRANCH="${IV_BRANCH:-"main"}"
+declare -r IV_REMOTE="${IV_REMOTE:-"InfernoVim/InfernoVim.git"}"
+declare -r INSTALL_PREFIX="${INSTALL_PREFIX:-"$HOME/.local"}"
 
 declare -r XDG_DATA_HOME="${XDG_DATA_HOME:-"$HOME/.local/share"}"
 declare -r XDG_CACHE_HOME="${XDG_CACHE_HOME:-"$HOME/.cache"}"
-declare -r XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-"$HOME/.config"}"
 
 declare -r INFERNOVIM_RUNTIME_DIR="${INFERNOVIM_RUNTIME_DIR:-"$XDG_DATA_HOME/infernovim"}"
 declare -r INFERNOVIM_CACHE_DIR="${INFERNOVIM_CACHE_DIR:-"$XDG_CACHE_HOME/ivim"}"
@@ -173,7 +172,7 @@ function detect_platform() {
 }
 
 function create_bin_files() {
-  cp "$INFERNOVIM_BASE_DIR/utils/bin/*" "$INSTALL_PREFIX/bin"
+  cp "$INFERNOVIM_BASE_DIR/utils/bin/ivim" "$INSTALL_PREFIX/bin/ivim"
 }
 
 function create_config_files() {
@@ -230,6 +229,7 @@ function check_neovim_ver() {
 
 # Clone infernovim to $HOME/.local/share/infernovim/ivim
 function clone_infernovim() {
+  echo "https://github.com/${IV_REMOTE}"
   if ! git clone --branch "$IV_BRANCH" \
     --depth 1 "https://github.com/${IV_REMOTE}" "$INFERNOVIM_BASE_DIR"; then
     echo "Failed to clone repository. Installation failed."
