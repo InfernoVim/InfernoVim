@@ -1,2 +1,0 @@
--- theme
-require('onedark').load()

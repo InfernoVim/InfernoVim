@@ -1,4 +1,2 @@
-require('plugins')
-
--- leader key
-vim.g.mapleader = " "
+require("plugins").setup()
+require("keymaps").setup()
