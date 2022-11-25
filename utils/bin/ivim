@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-
-export INFERNOVIM_RUNTIME_DIR="${INFERNOVIM_RUNTIME_DIR:-"$HOME/.local/share/infernovim"}"
-export INFERNOVIM_CACHE_DIR="${INFERNOVIM_CACHE_DIR:-"$HOME/.cache/ivim"}"
-
-exec nvim -u "$INFERNOVIM_RUNTIME_DIR/ivim/init.lua" "$@"
-

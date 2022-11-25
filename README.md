@@ -7,7 +7,5 @@ README.md to be written.
 ### Linux/MacOS:
 
 ```bash
-bash <(curl -s https://raw.githubusercontent.com/infernovim/infernovim/master/utils/installer/install.sh)
+git clone https://github.com/InfernoVim/InfernoVim ~/.config/nvim
 ```
-
-Try running the install script with the `-y` flag to automatically install all dependencies and have no prompts
