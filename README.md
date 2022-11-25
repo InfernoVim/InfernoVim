@@ -4,7 +4,7 @@ README.md to be written.
 
 ## Install
 
-### Linux/MacOS:
+### Linux:
 
 ```bash
 git clone https://github.com/InfernoVim/InfernoVim ~/.config/nvim
